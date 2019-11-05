@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <div class="wrapper">
+        {% for article in data.data %}
+            <div class="article">
+                <a href="#" onclick="displayChange('#divId{{ loop.index }}'); return false">{{ article.title }}</a>
+                <div id="divId{{ loop.index }}" style="display: none">
+                    <a href="{{ article.link }}">Ссылка на статью</a>
+                    <img src="{{ article.img }}" alt="" width="640">
+                    <p>{{ article.text }}</p>
+                </div>
+                <br>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+        function displayChange (objName) {
+         if ($(objName).css('display') == 'none') {
+            $(objName).animate({height: 'show'}, 400);
+         } else {
+            $(objName).animate({height: 'hide'}, 200);
+         }
+        }
+    </script>
+</body>
+</html>

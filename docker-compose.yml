@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  flask:
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: parser-cont
+    ports:
+      - "5050:5050"

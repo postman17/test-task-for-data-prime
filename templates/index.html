@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News parser</title>
+</head>
+<body>
+    <style>
+        .main {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+    <div class="main">
+        <form action="/search" method="POST">
+            <div class="row">
+                <label for="url">Введите урл адрес</label>
+                <input value="https://pasmi.ru/cat/news/page/" name="url" id="url">
+            </div>
+            <div class="row">
+                <label for="page-num">Введите количество обрабатываемых страниц</label>
+                <input value="1" name="page-num" id="page-num">
+            </div>
+            <div class="row">
+                <h3>Блок тегов списка статей</h3>
+            </div>
+            <div class="row">
+                <label for="main-tag">Введите главный тег</label>
+                <input value="article" name="main-tag-list" id="main-tag">
+            </div>
+            <div class="row">
+                <label for="main-tag-class">Введите класс главного тега(для теста оставьте пустым)</label>
+                <input name="main-tag-list-class" id="main-tag-class">
+            </div>
+            <div class="row">
+                <h3>Блок тегов текста статьи</h3>
+            </div>
+            <div class="row">
+                <label for="main-tag-article">Введите главный тег</label>
+                <input value="article" name="main-tag-article" id="main-tag-article">
+            </div>
+            <div class="row">
+                <label for="main-tag-article-class">Введите класс главного тега(для теста оставьте пустым)</label>
+                <input name="main-tag-article-class" id="main-tag-article-class">
+            </div>
+            <div class="row">
+                <input type="submit" value="Запустить">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
